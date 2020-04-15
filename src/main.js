@@ -29,7 +29,12 @@ Entry.prototype.totalConsonants = function() {
 
 Entry.prototype.teaser = function(){
   var firstPeriod = this.userText.indexOf('.');
-  var teaser = this.userText.slice(0, firstPeriod + 1);
+  var teaser = '';
+  if (this.userText.slice(0, firstPeriod + 1).split(' ').length > 8){
+    teaser = this.userText.split(' ').slice(0,8).join(' ') + "...";
+  } else {
+    teaser = this.userText.slice(0, firstPeriod+1);
+  }
   return teaser;
 }
 
