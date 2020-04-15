@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="src/jquery-3.4.1.js"></script>
+    <script src="src/main.js"></script>
     <title>Journal Page</title>
   </head>
   <body>
     <h1>welcome to your journal</h1>
     <form id="userForm">
     <input type="text" id='userName' placeholder="Enter your name.">
-    <input type="text" id="userText" placeholder="Type an entry to your journal here.">
+    <input type="text" id="userText" size="50" placeholder="Type an entry to your journal here.">
     <button type="submit">Submit your entry</button>
   </form>
+  <p>you entered <span id='wordCount'></span> words.</p>
   </body>
 </html>
