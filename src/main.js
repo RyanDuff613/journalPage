@@ -10,15 +10,21 @@ Entry.prototype.totalWords = function () {
 Entry.prototype.totalVowels = function() {
   var totalVowels = 0;
   var string = this.userText.toLowerCase();
-  for (var index = 0; index < this.userText.length; index++){
-    if (this.userText.charAt(index) === 'a' || this.userText.charAt(index) === 'e' || this.userText.charAt(index) === 'i' || this.userText.charAt(index) === 'o' || this.userText.charAt(index) === 'u')
+  for (var index = 0; index < string.length; index++){
+    if (string.charAt(index) === 'a' || string.charAt(index) === 'e' || string.charAt(index) === 'i' || string.charAt(index) === 'o' || string.charAt(index) === 'u')
       totalVowels += 1;
   }
   return totalVowels;
 }
 
 Entry.prototype.totalConsonants = function() {
-
+  var totalVowels = 0;
+  var string = this.userText.replace(/\W/g, '').toLowerCase();
+  for (var index = 0; index < string.length; index++){
+    if (string.charAt(index) === 'a' || string.charAt(index) === 'e' || string.charAt(index) === 'i' || string.charAt(index) === 'o' || string.charAt(index) === 'u')
+      totalVowels += 1;
+  }
+  return string.length - totalVowels
 }
 
 $(document).ready(function(){
