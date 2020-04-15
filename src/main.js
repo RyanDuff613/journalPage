@@ -24,7 +24,13 @@ Entry.prototype.totalConsonants = function() {
     if (string.charAt(index) === 'a' || string.charAt(index) === 'e' || string.charAt(index) === 'i' || string.charAt(index) === 'o' || string.charAt(index) === 'u')
       totalVowels += 1;
   }
-  return string.length - totalVowels
+  return string.length - totalVowels;
+}
+
+Entry.prototype.teaser = function(){
+  var firstPeriod = this.userText.indexOf('.');
+  var teaser = this.userText.slice(0, firstPeriod + 1);
+  return teaser;
 }
 
 $(document).ready(function(){
@@ -36,6 +42,7 @@ $(document).ready(function(){
       $("#wordCount").text(entry.totalWords());
       $('#totalVowels').text(entry.totalVowels());
       $('#totalConsonants').text(entry.totalConsonants());
+      $('#teaser').text(entry.teaser());
 
   });
 });
